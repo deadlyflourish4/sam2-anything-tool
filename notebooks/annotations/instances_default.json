@@ -1,0 +1,643 @@
+{
+    "info": {
+        "year": 2023,
+        "version": "2.5.4",
+        "description": "COCO Label Conversion",
+        "contributor": "CVHub",
+        "url": "https://github.com/CVHub520/X-AnyLabeling",
+        "date_created": "2025-03-26"
+    },
+    "licenses": [
+        {
+            "id": 1,
+            "url": "https://www.gnu.org/licenses/gpl-3.0.html",
+            "name": "GNU GENERAL PUBLIC LICENSE Version 3"
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "person",
+            "supercategory": ""
+        },
+        {
+            "id": 2,
+            "name": "bicycle",
+            "supercategory": ""
+        },
+        {
+            "id": 3,
+            "name": "car",
+            "supercategory": ""
+        },
+        {
+            "id": 4,
+            "name": "motorbike",
+            "supercategory": ""
+        },
+        {
+            "id": 5,
+            "name": "aeroplane",
+            "supercategory": ""
+        },
+        {
+            "id": 6,
+            "name": "bus",
+            "supercategory": ""
+        },
+        {
+            "id": 7,
+            "name": "train",
+            "supercategory": ""
+        },
+        {
+            "id": 8,
+            "name": "truck",
+            "supercategory": ""
+        },
+        {
+            "id": 9,
+            "name": "boat",
+            "supercategory": ""
+        },
+        {
+            "id": 10,
+            "name": "traffic light",
+            "supercategory": ""
+        },
+        {
+            "id": 11,
+            "name": "fire hydrant",
+            "supercategory": ""
+        },
+        {
+            "id": 12,
+            "name": "stop sign",
+            "supercategory": ""
+        },
+        {
+            "id": 13,
+            "name": "parking meter",
+            "supercategory": ""
+        },
+        {
+            "id": 14,
+            "name": "bench",
+            "supercategory": ""
+        },
+        {
+            "id": 15,
+            "name": "bird",
+            "supercategory": ""
+        },
+        {
+            "id": 16,
+            "name": "cat",
+            "supercategory": ""
+        },
+        {
+            "id": 17,
+            "name": "dog",
+            "supercategory": ""
+        },
+        {
+            "id": 18,
+            "name": "horse",
+            "supercategory": ""
+        },
+        {
+            "id": 19,
+            "name": "sheep",
+            "supercategory": ""
+        },
+        {
+            "id": 20,
+            "name": "cow",
+            "supercategory": ""
+        },
+        {
+            "id": 21,
+            "name": "elephant",
+            "supercategory": ""
+        },
+        {
+            "id": 22,
+            "name": "bear",
+            "supercategory": ""
+        },
+        {
+            "id": 23,
+            "name": "zebra",
+            "supercategory": ""
+        },
+        {
+            "id": 24,
+            "name": "giraffe",
+            "supercategory": ""
+        },
+        {
+            "id": 25,
+            "name": "backpack",
+            "supercategory": ""
+        },
+        {
+            "id": 26,
+            "name": "umbrella",
+            "supercategory": ""
+        },
+        {
+            "id": 27,
+            "name": "handbag",
+            "supercategory": ""
+        },
+        {
+            "id": 28,
+            "name": "tie",
+            "supercategory": ""
+        },
+        {
+            "id": 29,
+            "name": "suitcase",
+            "supercategory": ""
+        },
+        {
+            "id": 30,
+            "name": "frisbee",
+            "supercategory": ""
+        },
+        {
+            "id": 31,
+            "name": "skis",
+            "supercategory": ""
+        },
+        {
+            "id": 32,
+            "name": "snowboard",
+            "supercategory": ""
+        },
+        {
+            "id": 33,
+            "name": "sports ball",
+            "supercategory": ""
+        },
+        {
+            "id": 34,
+            "name": "kite",
+            "supercategory": ""
+        },
+        {
+            "id": 35,
+            "name": "baseball bat",
+            "supercategory": ""
+        },
+        {
+            "id": 36,
+            "name": "baseball glove",
+            "supercategory": ""
+        },
+        {
+            "id": 37,
+            "name": "skateboard",
+            "supercategory": ""
+        },
+        {
+            "id": 38,
+            "name": "surfboard",
+            "supercategory": ""
+        },
+        {
+            "id": 39,
+            "name": "tennis racket",
+            "supercategory": ""
+        },
+        {
+            "id": 40,
+            "name": "bottle",
+            "supercategory": ""
+        },
+        {
+            "id": 41,
+            "name": "wine glass",
+            "supercategory": ""
+        },
+        {
+            "id": 42,
+            "name": "cup",
+            "supercategory": ""
+        },
+        {
+            "id": 43,
+            "name": "fork",
+            "supercategory": ""
+        },
+        {
+            "id": 44,
+            "name": "knife",
+            "supercategory": ""
+        },
+        {
+            "id": 45,
+            "name": "spoon",
+            "supercategory": ""
+        },
+        {
+            "id": 46,
+            "name": "bowl",
+            "supercategory": ""
+        },
+        {
+            "id": 47,
+            "name": "banana",
+            "supercategory": ""
+        },
+        {
+            "id": 48,
+            "name": "apple",
+            "supercategory": ""
+        },
+        {
+            "id": 49,
+            "name": "sandwich",
+            "supercategory": ""
+        },
+        {
+            "id": 50,
+            "name": "orange",
+            "supercategory": ""
+        },
+        {
+            "id": 51,
+            "name": "broccoli",
+            "supercategory": ""
+        },
+        {
+            "id": 52,
+            "name": "carrot",
+            "supercategory": ""
+        },
+        {
+            "id": 53,
+            "name": "hot dog",
+            "supercategory": ""
+        },
+        {
+            "id": 54,
+            "name": "pizza",
+            "supercategory": ""
+        },
+        {
+            "id": 55,
+            "name": "donut",
+            "supercategory": ""
+        },
+        {
+            "id": 56,
+            "name": "cake",
+            "supercategory": ""
+        },
+        {
+            "id": 57,
+            "name": "chair",
+            "supercategory": ""
+        },
+        {
+            "id": 58,
+            "name": "sofa",
+            "supercategory": ""
+        },
+        {
+            "id": 59,
+            "name": "pottedplant",
+            "supercategory": ""
+        },
+        {
+            "id": 60,
+            "name": "bed",
+            "supercategory": ""
+        },
+        {
+            "id": 61,
+            "name": "diningtable",
+            "supercategory": ""
+        },
+        {
+            "id": 62,
+            "name": "toilet",
+            "supercategory": ""
+        },
+        {
+            "id": 63,
+            "name": "tvmonitor",
+            "supercategory": ""
+        },
+        {
+            "id": 64,
+            "name": "laptop",
+            "supercategory": ""
+        },
+        {
+            "id": 65,
+            "name": "mouse",
+            "supercategory": ""
+        },
+        {
+            "id": 66,
+            "name": "remote",
+            "supercategory": ""
+        },
+        {
+            "id": 67,
+            "name": "keyboard",
+            "supercategory": ""
+        },
+        {
+            "id": 68,
+            "name": "cell phone",
+            "supercategory": ""
+        },
+        {
+            "id": 69,
+            "name": "microwave",
+            "supercategory": ""
+        },
+        {
+            "id": 70,
+            "name": "oven",
+            "supercategory": ""
+        },
+        {
+            "id": 71,
+            "name": "toaster",
+            "supercategory": ""
+        },
+        {
+            "id": 72,
+            "name": "sink",
+            "supercategory": ""
+        },
+        {
+            "id": 73,
+            "name": "refrigerator",
+            "supercategory": ""
+        },
+        {
+            "id": 74,
+            "name": "book",
+            "supercategory": ""
+        },
+        {
+            "id": 75,
+            "name": "clock",
+            "supercategory": ""
+        },
+        {
+            "id": 76,
+            "name": "vase",
+            "supercategory": ""
+        },
+        {
+            "id": 77,
+            "name": "scissors",
+            "supercategory": ""
+        },
+        {
+            "id": 78,
+            "name": "teddy bear",
+            "supercategory": ""
+        },
+        {
+            "id": 79,
+            "name": "hair drier",
+            "supercategory": ""
+        },
+        {
+            "id": 80,
+            "name": "toothbrush",
+            "supercategory": ""
+        }
+    ],
+    "images": [
+        {
+            "id": 1,
+            "file_name": "frame_0.jpg",
+            "width": 3840,
+            "height": 2160,
+            "license": 0,
+            "flickr_url": "",
+            "coco_url": "",
+            "date_captured": ""
+        }
+    ],
+    "annotations": [
+        {
+            "id": 1,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                823.0,
+                462.0,
+                249.0,
+                135.0
+            ],
+            "area": 33615.0,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "id": 2,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                2002.0,
+                1509.0,
+                224.0,
+                132.0
+            ],
+            "area": 29568.0,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "id": 3,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                1826.0,
+                702.0,
+                208.0,
+                224.0
+            ],
+            "area": 46592.0,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "id": 4,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                2086.0,
+                802.0,
+                176.0,
+                226.0
+            ],
+            "area": 39776.0,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "id": 5,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                2512.0,
+                1282.0,
+                219.0,
+                205.0
+            ],
+            "area": 44895.0,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "id": 6,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                2589.0,
+                1002.0,
+                230.0,
+                188.0
+            ],
+            "area": 43240.0,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "id": 7,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                1416.0,
+                785.0,
+                206.0,
+                135.0
+            ],
+            "area": 27810.0,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "id": 8,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                2201.7391304347825,
+                1106.0869565217392,
+                190.73913043478387,
+                227.82608695652152
+            ],
+            "area": 43455.34971644637,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "id": 9,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                2313.0,
+                979.0,
+                215.0,
+                181.0
+            ],
+            "area": 38915.0,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "id": 10,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                1357.0,
+                725.0,
+                216.0,
+                136.0
+            ],
+            "area": 29376.0,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "id": 11,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                2317.0,
+                1039.0,
+                254.0,
+                160.0
+            ],
+            "area": 40640.0,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "id": 12,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                2494.0,
+                1084.0,
+                247.0,
+                145.0
+            ],
+            "area": 35815.0,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "id": 13,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                2370.0,
+                1177.0,
+                165.0,
+                270.0
+            ],
+            "area": 44550.0,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "id": 14,
+            "image_id": 1,
+            "category_id": 23,
+            "bbox": [
+                0,
+                458.0487804878049,
+                58.536585365853654,
+                95.12195121951214
+            ],
+            "area": 5568.11421772754,
+            "iscrowd": 0,
+            "ignore": 0,
+            "segmentation": []
+        }
+    ]
+}

@@ -521,17 +521,18 @@ class ImageManualPredictor:
         
 
     def predict(
-            self,
-            source,
-            model_ckpt,
-            model_cfg,
-            input_box=None,
-            input_point=None,
-            input_label=None,
-            multimask_output=False,
-            # output_path="output",
-            # random_color=False,
-            save=False
+        self,
+        source,
+        label,
+        model_ckpt,
+        model_cfg,
+        input_box=None,
+        input_point=None,
+        input_label=None,
+        multimask_output=False,
+        output_dir="output",  # Đổi tên từ output_path thành output_dir cho rõ nghĩa
+        # random_color=False,
+        # save=False
     ):
         format = {
                 "version": "2.5.4",
@@ -544,50 +545,69 @@ class ImageManualPredictor:
                 "description": ""
         }
 
+        # Đảm bảo thư mục output tồn tại
+        os.makedirs(output_dir, exist_ok=True)
+
         if os.path.isfile(source):
-            base_path = os.path.splitext(source)[0]
-            file_name = source.split('/')[-1]
-            file_name_without_extension = os.path.splitext(os.path.basename(file_name))[0]
-            json_path = base_path + '.json'
+            # Xử lý trường hợp đầu vào là file ảnh đơn
+            file_name = os.path.basename(source)
+            file_name_without_extension = os.path.splitext(file_name)[0]
+            
+            # Xác định đường dẫn json
+            if os.path.isfile(label):
+                json_path = label
+            elif os.path.isdir(label):
+                json_path = os.path.join(label, file_name_without_extension + '.json')
+            else:
+                print(f"Invalid label path: {label}")
+                return
 
             if os.path.exists(json_path):
-                
-
-                masks, scores, _, boxid = self.image_predict(source, json_path, model_ckpt, model_cfg, input_box, input_point, input_label, multimask_output)
+                masks, scores, _, boxid = self.image_predict(source, json_path, model_ckpt, model_cfg, 
+                                                        input_box, input_point, input_label, multimask_output)
                 format["shapes"] = convert(boxid, masks)
                 format["imagePath"] = file_name
                 format["imageHeight"], format["imageWidth"] = masks.shape[2], masks.shape[3]
                 
-
-                with open(f"output/{file_name_without_extension}.json", "w") as json_file:
-                    json.dump(format, json_file, indent=4)  # indent=4 for pretty-printing
-                # print(format)
-                # unq = np.unique(masks)
-                # print(unq)
-                # return masks
-                # Save results
+                # Tạo đường dẫn output
+                output_json_path = os.path.join(output_dir, f"{file_name_without_extension}.json")
+                
+                with open(output_json_path, "w") as json_file:
+                    json.dump(format, json_file, indent=4)
+                print(f"Saved results to: {output_json_path}")
 
         elif os.path.isdir(source):
+            # Xử lý trường hợp đầu vào là thư mục ảnh
             for filename in os.listdir(source):
                 file_path = os.path.join(source, filename)
                 
                 if os.path.isfile(file_path) and file_path.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif')):
-                    base_path = os.path.splitext(file_path)[0]
-                    file_name = file_path.split('/')[-1]
-                    file_name_without_extension = os.path.splitext(os.path.basename(file_name))[0]
-                    json_path = base_path + '.json'
+                    file_name = os.path.basename(file_path)
+                    file_name_without_extension = os.path.splitext(file_name)[0]
+                    
+                    # Xác định đường dẫn json tương ứng
+                    if os.path.isfile(label):
+                        print("Label must be a directory when source is a directory")
+                        continue
+                    elif os.path.isdir(label):
+                        json_path = os.path.join(label, file_name_without_extension + '.json')
+                    else:
+                        print(f"Invalid label path: {label}")
+                        continue
                     
                     if os.path.exists(json_path):
-                        masks, scores, _, boxid = self.image_predict(file_path, json_path, model_ckpt, model_cfg, input_box, input_point, input_label, multimask_output)
-
+                        masks, scores, _, boxid = self.image_predict(file_path, json_path, model_ckpt, model_cfg,
+                                                                input_box, input_point, input_label, multimask_output)
                         format["shapes"] = convert(boxid, masks)
                         format["imagePath"] = file_name
                         format["imageHeight"], format["imageWidth"] = masks.shape[2], masks.shape[3]
 
-                        with open(f"output/{file_name_without_extension}.json", "w") as json_file:
-                            json.dump(format, json_file, indent=4)  # indent=4 for pretty-printing
-                
-                        # Save results
+                        # Tạo đường dẫn output
+                        output_json_path = os.path.join(output_dir, f"{file_name_without_extension}.json")
+                        
+                        with open(output_json_path, "w") as json_file:
+                            json.dump(format, json_file, indent=4)
+                        print(f"Saved results to: {output_json_path}")
         else:
             print(f"Invalid path: {source} (not an image or folder)")
 
